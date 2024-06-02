@@ -3,7 +3,7 @@ package hangman;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HangmanController {
+public class LoginSingUpPageController {
     @FXML
     private Label welcomeText;
 
