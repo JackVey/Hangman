@@ -10,7 +10,7 @@ import java.io.IOException;
 public class HangmanApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HangmanApp.class.getResource("hangman-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HangmanApp.class.getResource("login-singup-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setResizable(false);
         stage.setTitle("Hangman");
