@@ -60,3 +60,7 @@
     -fx-font-size: 20px;
     -fx-font-family: "DejaVu Sans";
 }
+
+.button:pressed {
+    -fx-background-color: #9c5cea;
+}
