@@ -162,7 +162,7 @@
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="CENTER" layoutX="144.0" layoutY="382.0" prefHeight="100.0" prefWidth="1014.0">
+      <HBox fx:id="letter_container" alignment="CENTER" layoutX="144.0" layoutY="382.0" prefHeight="100.0" prefWidth="1014.0">
          <children>
             <Label prefHeight="65.0" prefWidth="65.0" styleClass="word-letters" stylesheets="@game-page.css" text="W" textFill="WHITE">
                <font>
@@ -190,33 +190,33 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="back-button" stylesheets="@game-page.css" text="Back" />
-      <ImageView fx:id="right_arm" fitHeight="40.0" fitWidth="16.0" layoutX="1034.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <Button fx:id="back_button" layoutX="40.0" layoutY="30.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="back-button" stylesheets="@game-page.css" text="Back" />
+      <ImageView fx:id="right_arm" disable="true" fitHeight="40.0" fitWidth="16.0" layoutX="1034.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/right_arm.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="right_leg" fitHeight="150.0" fitWidth="12.0" layoutX="1035.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="right_leg" disable="true" fitHeight="150.0" fitWidth="12.0" layoutX="1035.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/right_leg.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="body" fitHeight="40.0" fitWidth="25.0" layoutX="1033.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="body" disable="true" fitHeight="40.0" fitWidth="25.0" layoutX="1033.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/body.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="head" fitHeight="25.0" fitWidth="24.0" layoutX="1018.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="head" disable="true" fitHeight="25.0" fitWidth="24.0" layoutX="1018.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/head.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="left_arm" fitHeight="40.0" fitWidth="12.0" layoutX="1038.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="left_arm" disable="true" fitHeight="40.0" fitWidth="12.0" layoutX="1038.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/left_arm.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="left_leg" fitHeight="77.0" fitWidth="12.0" layoutX="1040.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="left_leg" disable="true" fitHeight="77.0" fitWidth="12.0" layoutX="1040.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@files/hanged%20man%20parts/300ppi/left_leg.png" />
          </image>
