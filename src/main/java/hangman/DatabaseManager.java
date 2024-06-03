@@ -161,6 +161,17 @@ public class DatabaseManager {
 
         return resultArrayList;
     }
+    public static boolean usernameExist(String targetUsername){
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            PreparedStatement preparedStatement  = connection.prepareStatement("SELECT username from userinfo Where username = ?");
+            preparedStatement.setString(1, targetUsername);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public static void main(String[] args)  {
 
     }
