@@ -1,6 +1,9 @@
 package hangman;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Optional;
 
 public class DatabaseManager {
     private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
@@ -71,17 +74,17 @@ public class DatabaseManager {
 
         return result;
     }
-    public static void writeGameInfoData(String targetUsername, String word, int wrongGuesses, int time, boolean win){
+    public static void writeGameInfoData(GameInfo gameInfo){
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
             PreparedStatement preparedStatement = connection.prepareStatement("insert into gameinfo (username, word" +
                     ", wrongguesses, time, win ) values (?, ?, ?, ?, ?)");
-            preparedStatement.setString(1, targetUsername);
-            preparedStatement.setString(2, word);
-            preparedStatement.setInt(3, wrongGuesses);
-            preparedStatement.setInt(4, time);
-            preparedStatement.setBoolean(5, win);
+            preparedStatement.setString(1, gameInfo.getUsername());
+            preparedStatement.setString(2, gameInfo.getWord());
+            preparedStatement.setInt(3, gameInfo.getWrongGuesses());
+            preparedStatement.setInt(4, gameInfo.getTime());
+            preparedStatement.setBoolean(5, gameInfo.isWin());
 
             preparedStatement.executeUpdate();
 
@@ -94,17 +97,25 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-    public static String readGameInfo(String targetUsername){
-        String result;
+    public static ArrayList<GameInfo> readGameInfoData(String targetUsername){
+        ArrayList<GameInfo> resultArrayList = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM userinfo where username = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM gameinfo where username = ?");
             preparedStatement.setString(1, targetUsername);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            result = resultSet.getString("password");
+
+            while (resultSet.next()) {
+                GameInfo result = new GameInfo();
+                result.setUsername(resultSet.getString("username"));
+                result.setWord(resultSet.getString("word"));
+                result.setWrongGuesses(resultSet.getInt("wrongguesses"));
+                result.setTime(resultSet.getInt("time"));
+                result.setWin(resultSet.getBoolean("win"));
+                resultArrayList.add(result);
+            }
 
             // Close the connection
             preparedStatement.close();
@@ -113,12 +124,12 @@ public class DatabaseManager {
 
 
         } catch (SQLException e) {
-            result = "";
+
         }
 
-        return result;
+        return resultArrayList;
     }
     public static void main(String[] args)  {
-        writeGameInfoData("jack", "rabbi", 3, 190, true);
+
     }
 }
