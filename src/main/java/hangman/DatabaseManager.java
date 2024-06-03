@@ -1,32 +1,36 @@
 package hangman;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 
 // Use JDBC to connect to your database and run queries
 
 public class DatabaseManager {
-    public static void main(String[] args)  {
+    private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String username = "postgres";
+    private static final String password = "@Dino3386669";
 
-        String jdbcUrl = "jdbc:postgresql://localhost:5432/Hangman";
-        String username = "postgres";
-        String password = "@Dino3386669";
-
-
-        // Register the PostgreSQL driver
-
-
-        // Connect to the database
-
+    public static String randomAnimalName(){
+        String animalName;
         try {
-            Class.forName("org.postgresql.Driver");
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-
-            // Perform desired database operations
-
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT name FROM animals ORDER BY RANDOM() LIMIT 1");
+            resultSet.next();
+            animalName = resultSet.getString("name");
             // Close the connection
+            resultSet.close();
+            statement.close();
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
+
+
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        return animalName;
+    }
+    public static void main(String[] args)  {
+        System.out.println(randomAnimalName());
     }
 }
