@@ -71,8 +71,54 @@ public class DatabaseManager {
 
         return result;
     }
+    public static void writeGameInfoData(String targetUsername, String word, int wrongGuesses, int time, boolean win){
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into gameinfo (username, word" +
+                    ", wrongguesses, time, win ) values (?, ?, ?, ?, ?)");
+            preparedStatement.setString(1, targetUsername);
+            preparedStatement.setString(2, word);
+            preparedStatement.setInt(3, wrongGuesses);
+            preparedStatement.setInt(4, time);
+            preparedStatement.setBoolean(5, win);
+
+            preparedStatement.executeUpdate();
+
+            // Close the connection
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static String readGameInfo(String targetUsername){
+        String result;
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM userinfo where username = ?");
+            preparedStatement.setString(1, targetUsername);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            result = resultSet.getString("password");
+
+            // Close the connection
+            preparedStatement.close();
+            resultSet.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            result = "";
+        }
+
+        return result;
+    }
     public static void main(String[] args)  {
-        writeSingUpData("x", "y", "z");
+        writeGameInfoData("jack", "rabbi", 3, 190, true);
     }
 }
