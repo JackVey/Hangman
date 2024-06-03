@@ -129,7 +129,43 @@ public class DatabaseManager {
 
         return resultArrayList;
     }
-    public static void main(String[] args)  {
+    public static ArrayList<GameInfo> readDataForLeaderboard(){
+        ArrayList<GameInfo> resultArrayList = new ArrayList<>();
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM gameinfo where win = ?");
+            preparedStatement.setBoolean(1, true);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                GameInfo result = new GameInfo();
+                result.setUsername(resultSet.getString("username"));
+                result.setWord(resultSet.getString("word"));
+                result.setWrongGuesses(resultSet.getInt("wrongguesses"));
+                result.setTime(resultSet.getInt("time"));
+                result.setWin(resultSet.getBoolean("win"));
+                resultArrayList.add(result);
+            }
+
+            // Close the connection
+            preparedStatement.close();
+            resultSet.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+
+        }
+
+        return resultArrayList;
+    }
+    public static void main(String[] args)  {
+        ArrayList<GameInfo> gameInfos = readDataForLeaderboard();
+        for (GameInfo g : gameInfos){
+            System.out.println("username: " + g.getUsername()
+            + "word: " + g.getWord());
+        }
     }
 }
