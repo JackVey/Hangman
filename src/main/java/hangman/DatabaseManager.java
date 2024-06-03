@@ -162,10 +162,6 @@ public class DatabaseManager {
         return resultArrayList;
     }
     public static void main(String[] args)  {
-        ArrayList<GameInfo> gameInfos = readDataForLeaderboard();
-        for (GameInfo g : gameInfos){
-            System.out.println("username: " + g.getUsername()
-            + "word: " + g.getWord());
-        }
+
     }
 }
