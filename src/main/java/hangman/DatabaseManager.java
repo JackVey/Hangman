@@ -1,9 +1,6 @@
 package hangman;
 
-import javax.xml.transform.Result;
 import java.sql.*;
-
-// Use JDBC to connect to your database and run queries
 
 public class DatabaseManager {
     private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
@@ -30,7 +27,52 @@ public class DatabaseManager {
 
         return animalName;
     }
+    public static void writeSingUpData(String targetUsername, String name, String targetPassword){
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into userinfo (name, username, password) values (?, ?, ?)");
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, targetUsername);
+            preparedStatement.setString(3, targetPassword);
+
+            preparedStatement.executeUpdate();
+
+            // Close the connection
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static String readUserInfo(String targetUsername){
+        String result;
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT password FROM userinfo where username = ?");
+            preparedStatement.setString(1, targetUsername);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            result = resultSet.getString("password");
+
+            // Close the connection
+            preparedStatement.close();
+            resultSet.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            result = "";
+        }
+
+        return result;
+    }
+
     public static void main(String[] args)  {
-        System.out.println(randomAnimalName());
+        writeSingUpData("x", "y", "z");
     }
 }
