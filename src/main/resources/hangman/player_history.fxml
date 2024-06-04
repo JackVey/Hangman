@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@player_history.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.PlayerHistory">
    <children>
       <TableView fx:id="history_table" layoutX="150.0" layoutY="100.0" prefHeight="520.0" prefWidth="1000.0">
@@ -19,6 +18,6 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="back_button" layoutX="21.0" layoutY="17.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="back-button" stylesheets="@player_history.css" text="Back" />
+      <Button layoutX="21.0" layoutY="17.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="80.0" prefWidth="80.0" styleClass="back-button" stylesheets="@player_history.css" text="Back" />
    </children>
 </AnchorPane>
