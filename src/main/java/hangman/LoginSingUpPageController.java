@@ -3,12 +3,11 @@ package hangman;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginSingUpPageController {
     //Login page attributes
@@ -39,7 +38,7 @@ public class LoginSingUpPageController {
         }
         else if(Security.validateLoginInfo(username, password)){
             login_message.setText("Login in, pleas wait...");
-            Scene scene = new Scene(FXMLLoader.load(HangmanApp.class.getResource("main-menu-page.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("main-menu-page.fxml"))));
             HangmanApp.stage.setScene(scene);
         }
         else {
