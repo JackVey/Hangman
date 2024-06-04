@@ -2,8 +2,7 @@
     -fx-background-color: #140229;
 }
 
-.tab .tab-label
-{
+.tab .tab-label {
     -fx-font-family: "DejaVu Sans";
     -fx-text-fill: white;
     -fx-font-size: 14px;
@@ -19,8 +18,7 @@
     -fx-padding: 10px 0px 0px 5px;
 }
 
-.tab
-{
+.tab {
     -fx-background-color: #5508b0;
     /*-fx-background-color: transparent;*/
     -fx-background-insets: 0px 0px 0px 0px;
@@ -28,8 +26,7 @@
     -fx-padding: 8px 15px 5px 15px;
 }
 
-.tab:selected
-{
+.tab:selected {
     -fx-background-color: #140229;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;

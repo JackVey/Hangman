@@ -25,11 +25,13 @@ public class LeaderboardPage implements Initializable {
     private TableColumn<GameInfo, String> wrong_column;
     @FXML
     private TableColumn<GameInfo, String> time_column;
+
     @FXML
     private void onBackButtonClick() throws IOException {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("main-menu-page.fxml"))));
         HangmanApp.stage.setScene(scene);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         username_column.setCellValueFactory(new PropertyValueFactory<>("username"));

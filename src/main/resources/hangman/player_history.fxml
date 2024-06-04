@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@player_history.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.PlayerHistory">
-   <children>
-      <TableView fx:id="history_table" layoutX="150.0" layoutY="100.0" prefHeight="520.0" prefWidth="1000.0">
-        <columns>
-          <TableColumn fx:id="word_column" editable="false" prefWidth="75.0" sortable="false" text="Word" />
-          <TableColumn fx:id="wrong_column" editable="false" prefWidth="75.0" text="Wrong guesses" />
-            <TableColumn fx:id="time_column" editable="false" prefWidth="75.0" text="Time" />
-            <TableColumn fx:id="win_column" editable="false" prefWidth="75.0" sortable="false" text="Win" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <Button layoutX="21.0" layoutY="17.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="80.0" prefWidth="80.0" styleClass="back-button" stylesheets="@player_history.css" text="Back" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="720.0" prefWidth="1280.0" styleClass="background"
+            stylesheets="@player_history.css" xmlns="http://javafx.com/javafx/21"
+            fx:controller="hangman.PlayerHistory">
+    <children>
+        <TableView fx:id="history_table" layoutX="150.0" layoutY="100.0" prefHeight="520.0" prefWidth="1000.0">
+            <columns>
+                <TableColumn fx:id="word_column" editable="false" prefWidth="75.0" sortable="false" text="Word"/>
+                <TableColumn fx:id="wrong_column" editable="false" prefWidth="75.0" text="Wrong guesses"/>
+                <TableColumn fx:id="time_column" editable="false" prefWidth="75.0" text="Time"/>
+                <TableColumn fx:id="win_column" editable="false" prefWidth="75.0" sortable="false" text="Win"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <Button layoutX="21.0" layoutY="17.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="80.0"
+                prefWidth="80.0" styleClass="back-button" stylesheets="@player_history.css" text="Back"/>
+    </children>
 </AnchorPane>

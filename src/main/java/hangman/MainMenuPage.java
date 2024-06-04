@@ -14,16 +14,19 @@ public class MainMenuPage {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("login-singup-page.fxml"))));
         HangmanApp.stage.setScene(scene);
     }
+
     @FXML
     private void onLeaderboardButtonClick() throws IOException {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("leaderboard-page.fxml"))));
         HangmanApp.stage.setScene(scene);
     }
+
     @FXML
     private void onGameHistoryButtonClick() throws IOException {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("player_history.fxml"))));
         HangmanApp.stage.setScene(scene);
     }
+
     @FXML
     private void onNewGameButtonClick() throws IOException {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("game-page.fxml"))));

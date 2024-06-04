@@ -4,16 +4,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class PlayerHistory implements Initializable {
     @FXML
@@ -26,11 +25,13 @@ public class PlayerHistory implements Initializable {
     private TableColumn<GameInfo, String> time_column;
     @FXML
     private TableColumn<GameInfo, String> win_column;
+
     @FXML
     private void onBackButtonClick() throws IOException {
         Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("main-menu-page.fxml"))));
         HangmanApp.stage.setScene(scene);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         word_column.setCellValueFactory(new PropertyValueFactory<>("word"));

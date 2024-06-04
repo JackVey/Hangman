@@ -2,15 +2,13 @@ package hangman;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Optional;
 
 public class DatabaseManager {
     private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
     private static final String username = "postgres";
     private static final String password = "@Dino3386669";
 
-    public static String randomAnimalName(){
+    public static String randomAnimalName() {
         String animalName;
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -30,7 +28,8 @@ public class DatabaseManager {
 
         return animalName;
     }
-    public static void writeSingUpData(String targetUsername, String name, String targetPassword){
+
+    public static void writeSingUpData(String targetUsername, String name, String targetPassword) {
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
@@ -50,7 +49,8 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-    public static String readUserInfo(String targetUsername){
+
+    public static String readUserInfo(String targetUsername) {
         String result;
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -74,7 +74,8 @@ public class DatabaseManager {
 
         return result;
     }
-    public static void writeGameInfoData(GameInfo gameInfo){
+
+    public static void writeGameInfoData(GameInfo gameInfo) {
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
 
@@ -97,7 +98,8 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-    public static ArrayList<GameInfo> readGameInfoData(String targetUsername){
+
+    public static ArrayList<GameInfo> readGameInfoData(String targetUsername) {
         ArrayList<GameInfo> resultArrayList = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -129,7 +131,8 @@ public class DatabaseManager {
 
         return resultArrayList;
     }
-    public static ArrayList<GameInfo> readDataForLeaderboard(){
+
+    public static ArrayList<GameInfo> readDataForLeaderboard() {
         ArrayList<GameInfo> resultArrayList = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -161,10 +164,11 @@ public class DatabaseManager {
 
         return resultArrayList;
     }
-    public static boolean usernameExist(String targetUsername){
+
+    public static boolean usernameExist(String targetUsername) {
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            PreparedStatement preparedStatement  = connection.prepareStatement("SELECT username from userinfo Where username = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT username from userinfo Where username = ?");
             preparedStatement.setString(1, targetUsername);
             ResultSet resultSet = preparedStatement.executeQuery();
             return resultSet.next();
@@ -172,7 +176,8 @@ public class DatabaseManager {
             throw new RuntimeException(e);
         }
     }
-    public static void main(String[] args)  {
+
+    public static void main(String[] args) {
 
     }
 }
