@@ -24,19 +24,19 @@
                                                 <Insets bottom="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Enter your username" />
+                                        <TextField fx:id="enter_username_textfield" alignment="CENTER" promptText="Enter your username" />
                                         <Label text="Password">
                                             <VBox.margin>
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Enter your password" />
+                                        <TextField fx:id="enter_passwrod_textfield" alignment="CENTER" promptText="Enter your password" />
                                         <Label>
                                             <VBox.margin>
                                                 <Insets bottom="30.0" top="30.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Login" />
+                                        <Button fx:id="login_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Login" />
                                     </children>
                                     <padding>
                                         <Insets left="15.0" right="15.0" top="30.0" />
@@ -57,31 +57,31 @@
                                                 <Insets bottom="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Enter your name" />
+                                        <TextField fx:id="enter_name_textfield" alignment="CENTER" promptText="Enter your name" />
                                         <Label text="Username">
                                             <VBox.margin>
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Enter your username" />
+                                        <TextField fx:id="choose_username_textfield" alignment="CENTER" promptText="Choose a username username" />
                                         <Label text="Choose a password">
                                             <VBox.margin>
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Enter a paasword" />
+                                        <TextField fx:id="choose_password_textfield" alignment="CENTER" promptText="Choose a paasword" />
                                         <Label text="Re-enter the password">
                                             <VBox.margin>
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <TextField alignment="CENTER" promptText="Re-enter the paasword" />
+                                        <TextField fx:id="re_enter_textfield" alignment="CENTER" promptText="Re-enter the paasword" />
                                         <Label>
                                             <VBox.margin>
                                                 <Insets bottom="20.0" top="20.0" />
                                             </VBox.margin>
                                         </Label>
-                                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Sing Up" />
+                                        <Button fx:id="sing_up_button" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Sing Up" />
                                     </children>
                                     <padding>
                                         <Insets left="15.0" right="15.0" top="30.0" />
