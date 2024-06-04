@@ -9,10 +9,10 @@
    <children>
       <TableView fx:id="history_table" layoutX="150.0" layoutY="100.0" prefHeight="520.0" prefWidth="1000.0">
         <columns>
-          <TableColumn editable="false" prefWidth="75.0" text="Word" />
-          <TableColumn editable="false" prefWidth="75.0" text="Wrong guesses" />
-            <TableColumn editable="false" prefWidth="75.0" text="Time" />
-            <TableColumn prefWidth="75.0" text="Win" />
+          <TableColumn fx:id="word_column" editable="false" prefWidth="75.0" sortable="false" text="Word" />
+          <TableColumn fx:id="wrong_column" editable="false" prefWidth="75.0" text="Wrong guesses" />
+            <TableColumn fx:id="time_column" editable="false" prefWidth="75.0" text="Time" />
+            <TableColumn fx:id="win_column" editable="false" prefWidth="75.0" sortable="false" text="Win" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
