@@ -6,6 +6,10 @@
     -fx-font-size: 22px;
 }
 
+.button:hover {
+    -fx-background-color: #6a1dc0;
+}
+
 .button:pressed {
     -fx-background-color: #9c5cea;
 }
