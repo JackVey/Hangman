@@ -40,6 +40,7 @@ public class LoginSingUpPageController {
             login_message.setText("Login in, pleas wait...");
             Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("main-menu-page.fxml"))));
             HangmanApp.stage.setScene(scene);
+            User.setUsername(username);
         }
         else {
             login_message.setText("Username/Password is wrong!");

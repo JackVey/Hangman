@@ -3,7 +3,7 @@ package hangman;
 public class User {
     public static String username;
 
-    User(String username){
+    public static void setUsername(String username) {
         User.username = username;
     }
 
