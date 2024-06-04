@@ -67,6 +67,10 @@ public class LoginSingUpPageController {
             sing_up_message.setText("Password and confirmed password are different!");
         }else {
             DatabaseManager.writeSingUpData(enteredUsername, enteredName, enteredPassword);
+            enter_name_textfield.clear();
+            choose_username_textfield.clear();
+            choose_password_textfield.clear();
+            re_enter_textfield.clear();
             sing_up_message.setText("You are singed up!");
         }
     }
