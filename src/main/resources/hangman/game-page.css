@@ -18,7 +18,7 @@
     -fx-font-family: "DejaVu Sans";
 }
 
-.word-letters {
+#word-letters {
     -fx-text-fill: White;
     -fx-font-family: "DejaVu Sans";
     -fx-font-weight: bold;
