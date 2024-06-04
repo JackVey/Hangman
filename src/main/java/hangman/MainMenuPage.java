@@ -15,15 +15,18 @@ public class MainMenuPage {
         HangmanApp.stage.setScene(scene);
     }
     @FXML
-    private void onLeaderboardButtonClick(){
-
+    private void onLeaderboardButtonClick() throws IOException {
+        Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("leaderboard-page.fxml"))));
+        HangmanApp.stage.setScene(scene);
     }
     @FXML
-    private void onGameHistoryButtonClick(){
-
+    private void onGameHistoryButtonClick() throws IOException {
+        Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("player_history.fxml"))));
+        HangmanApp.stage.setScene(scene);
     }
     @FXML
-    private void onNewGameButtonClick(){
-
+    private void onNewGameButtonClick() throws IOException {
+        Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(HangmanApp.class.getResource("game-page.fxml"))));
+        HangmanApp.stage.setScene(scene);
     }
 }
