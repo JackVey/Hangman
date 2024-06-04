@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.MainMenuPage">
    <children>
       <ImageView fitHeight="726.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
@@ -27,22 +26,22 @@
                   <Font name="Agency FB" size="96.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" text="New Game">
+            <Button mnemonicParsing="false" onAction="#onNewGameButtonClick" prefHeight="65.0" prefWidth="200.0" text="New Game">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" text="Game History">
+            <Button mnemonicParsing="false" onAction="#onGameHistoryButtonClick" prefHeight="65.0" prefWidth="200.0" text="Game History">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" text="Leaderboard">
+            <Button mnemonicParsing="false" onAction="#onLeaderboardButtonClick" prefHeight="65.0" prefWidth="200.0" text="Leaderboard">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="200.0" text="Logout">
+            <Button mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="65.0" prefWidth="200.0" text="Logout">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
