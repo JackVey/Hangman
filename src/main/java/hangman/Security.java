@@ -11,4 +11,12 @@ public class Security {
         }
         return false;
     }
+
+    public static boolean validateUsername(String providedUsername){
+        return DatabaseManager.usernameExist(providedUsername);
+    }
+
+    public static boolean validatePassword(String password, String reEnteredPassword){
+        return password.equals(reEnteredPassword);
+    }
 }
