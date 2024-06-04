@@ -76,7 +76,7 @@
                                             </VBox.margin>
                                         </Label>
                                         <TextField fx:id="re_enter_textfield" alignment="CENTER" promptText="Re-enter the paasword" />
-                                        <Label fx:id="sing_up_message" disable="true">
+                                        <Label fx:id="sing_up_message">
                                             <VBox.margin>
                                                 <Insets bottom="20.0" top="20.0" />
                                             </VBox.margin>
