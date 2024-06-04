@@ -36,7 +36,7 @@ public class PlayerHistory implements Initializable {
         word_column.setCellValueFactory(new PropertyValueFactory<>("word"));
         wrong_column.setCellValueFactory(new PropertyValueFactory<>("wrongGuesses"));
         time_column.setCellValueFactory(new PropertyValueFactory<>("time"));
-        win_column.setCellValueFactory(new PropertyValueFactory<>("time"));
+        win_column.setCellValueFactory(new PropertyValueFactory<>("win"));
 
         ArrayList<GameInfo> gameInfos = DatabaseManager.readGameInfoData(User.getUsername());
 
