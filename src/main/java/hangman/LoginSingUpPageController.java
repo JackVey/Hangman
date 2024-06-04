@@ -50,7 +50,25 @@ public class LoginSingUpPageController {
 
     @FXML
     private void onSingUpButtonClick(){
-
+        String enteredName = enter_name_textfield.getText();
+        String enteredUsername = choose_username_textfield.getText();
+        String enteredPassword = choose_password_textfield.getText();
+        String reEnteredPassword = re_enter_textfield.getText();
+        if (enteredName.isEmpty() || enteredName.isBlank() ||
+                enteredUsername.isEmpty() || enteredUsername.isBlank() ||
+                enteredPassword.isEmpty() || enteredPassword.isBlank() ||
+                reEnteredPassword.isEmpty() || reEnteredPassword.isBlank()){
+            sing_up_message.setText("Please enter all required information");
+        } else if (enteredUsername.contains(" ")) {
+            sing_up_message.setText("Username cannot contains space!");
+        } else if (Security.validateUsername(enteredUsername)) {
+            sing_up_message.setText("Username already exist!");
+        } else if (!Security.validatePassword(enteredPassword, reEnteredPassword)) {
+            sing_up_message.setText("Password and confirmed password are different!");
+        }else {
+            DatabaseManager.writeSingUpData(enteredUsername, enteredName, enteredPassword);
+            sing_up_message.setText("You are singed up!");
+        }
     }
 
 }
