@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class DatabaseManager {
     private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
-    private static final String username = "postgres";
-    private static final String password = "@Dino3386669";
+    private static final String username = "Your_username";
+    private static final String password = "Your_password";
 
     public static String randomAnimalName() {
         String animalName;
