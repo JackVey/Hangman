@@ -85,8 +85,10 @@ My Gmail - varin.rain3@gmail.com
 
 > [!IMPORTANT]
 > Do not skip how to use steps!.
+
 > [!WARNING]
 > You are going to be unable to run the application if you do not import java fx into project properly.
+> Also do not forget about configuring your database.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
