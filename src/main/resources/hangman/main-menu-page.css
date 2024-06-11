@@ -1,0 +1,11 @@
+.button {
+    -fx-background-color: #5c10a9;
+    -fx-background-radius: 50px;
+    -fx-text-fill: White;
+    -fx-font-size: 22px;
+    -fx-font-family: "DejaVu Sans";
+}
+
+.button:pressed {
+    -fx-background-color: #9c5cea;
+}

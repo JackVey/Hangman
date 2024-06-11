@@ -1,0 +1,50 @@
+.button {
+    -fx-background-color: #520ca1;
+    -fx-text-fill: White;
+    -fx-font-family: "DejaVu Sans";
+    -fx-background-radius: 10px;
+    -fx-font-size: 22px;
+}
+
+.button:hover {
+    -fx-background-color: #6a1dc0;
+}
+
+.button:pressed {
+    -fx-background-color: #9c5cea;
+}
+
+.text-field {
+    -fx-background-color: #520ca1;
+    -fx-background-radius: 50px;
+    -fx-text-fill: White;
+    -fx-font-size: 30px;
+    -fx-font-family: "DejaVu Sans";
+}
+
+#word-letters {
+    -fx-text-fill: White;
+    -fx-font-family: "DejaVu Sans";
+    -fx-font-weight: bold;
+    -fx-font-size: 34px;
+    -fx-background-color: rgba(255, 255, 255, 0.24);
+    -fx-border-color: #520ca1;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 20px;
+    -fx-alignment: center;
+    /*-fx-background-insets: 2px;*/
+    /*-fx-padding: 2px;*/
+}
+
+.back-button {
+    -fx-background-color: #520ca1;
+    -fx-text-fill: White;
+    -fx-font-family: "DejaVu Sans";
+    -fx-background-radius: 60px;
+    -fx-font-size: 20px;
+}
+
+.back-button:pressed {
+    -fx-background-color: #9c5cea;
+}

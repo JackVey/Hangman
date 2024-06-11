@@ -1,0 +1,63 @@
+.tab-pane {
+    -fx-background-color: #140229;
+}
+
+.tab .tab-label {
+    -fx-font-family: "DejaVu Sans";
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.tab-pane > *.tab-header-area > *.tab-header-background {
+    -fx-background-color: #2f0457;
+    -fx-background-insets: 0;
+
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 10px 0px 0px 5px;
+}
+
+.tab {
+    -fx-background-color: #5508b0;
+    /*-fx-background-color: transparent;*/
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-background-radius: 10px 10px 0px 0px;
+    -fx-padding: 8px 15px 5px 15px;
+}
+
+.tab:selected {
+    -fx-background-color: #140229;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-radius: 10px 10px 0px 0px;
+    -fx-background-insets: 0, 1, 2;
+
+}
+
+.text-field {
+    -fx-background-color: #7d16ee;
+    -fx-background-radius: 50px;
+    -fx-text-fill: White;
+    -fx-text-alignment: center;
+    -fx-font-size: 15px;
+    -fx-font-family: "DejaVu Sans";
+}
+
+.label {
+    -fx-text-fill: White;
+    -fx-font-family: "DejaVu Sans";
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #7d16ee;
+    -fx-background-radius: 50px;
+    -fx-text-fill: White;
+    -fx-font-size: 20px;
+    -fx-font-family: "DejaVu Sans";
+}
+
+.button:pressed {
+    -fx-background-color: #9c5cea;
+}

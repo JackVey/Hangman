@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="720.0" prefWidth="1280.0"
+            xmlns="http://javafx.com/javafx/21" fx:controller="hangman.MainMenuPage">
+    <children>
+        <ImageView fitHeight="726.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@files/Untitled-1.jpg"/>
+            </image>
+        </ImageView>
+        <VBox alignment="TOP_CENTER" layoutX="473.0" layoutY="89.0" prefHeight="589.0" prefWidth="326.0"
+              stylesheets="@main-menu-page.css">
+            <children>
+                <Label text="Hangman" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets bottom="140.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Agency FB" size="96.0"/>
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#onNewGameButtonClick" prefHeight="65.0" prefWidth="200.0"
+                        text="New Game">
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#onGameHistoryButtonClick" prefHeight="65.0" prefWidth="200.0"
+                        text="Game History">
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#onLeaderboardButtonClick" prefHeight="65.0" prefWidth="200.0"
+                        text="Leaderboard">
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="65.0" prefWidth="200.0"
+                        text="Logout">
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

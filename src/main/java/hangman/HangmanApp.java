@@ -8,16 +8,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HangmanApp extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HangmanApp.class.getResource("hangman-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hangman");
-        stage.setScene(scene);
-        stage.show();
-    }
+    public static Stage stage;
 
     public static void main(String[] args) {
         launch();
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HangmanApp.class.getResource("login-singup-page.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
+        stage.setTitle("Hangman");
+        stage.setScene(scene);
+        stage.show();
+        HangmanApp.stage = stage;
     }
 }

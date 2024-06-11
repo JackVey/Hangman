@@ -1,204 +1,114 @@
-# Eighth Assignment Hangman 🪢
-## Introduction 👋
-Welcome to your last assignment before the Final project. 🤠🤠  
-I hope you all are still energetic and ready to continue your excellent work. In this project, you will build a Hangman game using JavaFX and store its data in a chosen database. 💻
-
-## Prerequisites ✅
-1) Make sure you have installed these apps before starting your project:
-
-- SceneBuilder
-- Mongodb/PostgreSQL
-- Java 21
-- Git
-- Maven as a package manager 
-
-## Objectives ✏️
-
-By completing this assignment, you will:
-
-- Learn about databases and how to work with them.
-- Gain experience with JavaFX and UI development.
+# **Hangman game + PostgresSQL database + GUI**
 
 
-## Assignment Overview 🔎
+[![JackVey][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-Your task is to develop a Hangman game. Hangman is a game where the player must guess the word by suggesting letters within a limited number of guesses. Incorrect guesses result in a part of a stick figure being drawn, and the game is lost if the figure is completed before the word is guessed. Note that you must design a Graphical User Interface for this project using JavaFX.
+## Overview
+This project aims to create a simple **Hangman** that uses **PostgresSQL** for database. The application will allow gamers to singUp/Login, view their game history and leaderboard. Here are the main features:
 
-## How to Play Hangman
+1. **Client Authentication**: Users have to Login before accessing the game.
+1. **SQL Database**: All the users and games data are stored in postgres server.
+3. **Game history**: Players have access to all their previous game infos.
+4. **Leaderboard**: Players can view their rank in leaderboard.
 
-1. **Setup**:
-   - The host (the computer, in this case) chooses a word and draws a series of blank spaces representing each letter of the word. For example, if the word is "APPLE", 5 blank spaces must be shown to the player.
-     ```
-     _ _ _ _ _
-     ```
+### Bulit with
+[![Java][Java.badge]][Java-url]
+[![CSS][CSS.badge]][CSS-url]
+[![Postgres][Postgres.badge]][Postgres-url]
+## Project Structure
 
-2. **Gameplay**:
-   - The player (the guesser) suggests letters one at a time.
-   - If the guessed letter is in the word, the host fills in the corresponding blanks with that letter, and the letter will vanish from the keyboard.
-   - If the guessed letter is not in the word, the host draws one part of a hangman figure. You can draw this figure however you like in your GUI, but the typical order of drawing is:
-     1. Head
-     2. Body
-     3. Left arm
-     4. Right arm
-     5. Left leg
-     6. Right leg
+![UML Diagram][UML.image]
 
-3. **Winning and Losing**:
-   - The guesser wins the game if they correctly guess all the letters in the word before the hangman figure is fully drawn.
-   - The guesser loses the game if the hangman figure is completed before the word is guessed.
+### Java classes
+- **HangmanApp**: Main class, loads the login/singUp page.
+- **DatabaseManager**: Connects to database a reterives desired infos.
+- **Security**: Validates login informations;Entered username and password in sing up page.
+- **User**: Stores current gamers username.
+- **GameInfo**: Its purpose is to store games info.
+- **GamePlay**: Backend of the game page alongside page controller.
+- **Other Unmentioned Classes**: They are all controllers for .fxml files.
+### Database tables
+it is consist of 3 tables: gameinfo, userinfo and animals.
+- **Animals**: Storing animal names for game. has on column `name`.
+- **GameInfo**: Storing games info. has 6 column:
+   - Username: Gamers username that has played the game.
+   - Word: Choosen word for the game.
+   - WrongGuesses: Number of wrong guesses, the maximum value is 6.
+   - Time: Duration of the game.
+   - Win: Stores a boolean variable showing that gamer won or lost.
+   - GameID: Primary key GameID.
+- **UserInfo**: Storing users info. has 3 column:
+   - Username: Gamers username.
+   - Name: Gamers name.
+   - Password: Users password.
+ 
 
-### Example of a game
+## Image of program
+**Login page**
 
-#### Step 1: Initial Setup
-- The host thinks of the word "JAVA" and draws the blanks:
-  ```
-  _ _ _ _
-  ```
+![loginPage.image]
 
-#### Step 2: First Guess
-- The guesser suggests the letter "A".
-- The host fills in the blanks:
-  ```
-  _ A _ A
-  ```
-  No part of the hangman is drawn since the guess was correct.
-  Letter A will vanish from the keyboard.
+**Main page**
 
-#### Step 3: Second Guess
-- The guesser suggests the letter "E".
-- "E" is not in the word, so the host draws the head of the hangman.
-  ```
-  Drawing:
-   O
-  ```
-  Word:
-  ```
-  _ A _ A
-  ```
+![mainPage.image]
 
-#### Step 4: Third Guess
-- The guesser suggests the letter "J".
-- The host fills in the blanks:
-  ```
-  J A _ A
-  ```
-  No additional part of the hangman is drawn.
+**Game page**
 
-#### Step 5: Fourth Guess
-- The guesser suggests the letter "V".
-- The host fills in the blanks:
-  ```
-  J A V A
-  ```
-  The word is fully guessed, and the guesser wins!
-
-#### Final Drawing if the Guesser Loses:
-If the guesser makes enough incorrect guesses, the hangman figure is fully drawn, and the word is not guessed:
-```
-   ____
-  |    |
-  O    |
- /|\   |
- / \   |
-       |
-  =====
-```
-
-For more information, we recommend playing online hangman, available in the [resource section](#Resources-).
+![gamePage.image]
 
 
+## How to use?
+1. Clone the project using following code
+   - `git clone https://github.com/JackVey/Hangman.git`
+2. **IDE Setup**: Use IntelliJ or any other IDE of your choice. It is recommended to use IntelliJ along Maven.
+3. Install java fx and add its lib folder to the projects libraries.
+4. Configure the database address, username and password in `DatabaseManager.java`.
+```java
+    private static final String jdbcUrl = "";
+    private static final String username = "";
+    private static final String password = "";
+``` 
+5. First Start the server and then the UIApplication
+6. Enjoy!
+
+## License
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## Contact
+
+My Gmail - varin.rain3@gmail.com
 
 
-## Tasks 📝
+> [!IMPORTANT]
+> Do not skip how to use steps!.
 
-1. Fork this repository and clone it to your local machine.
-2. Create a new branch named `develop` and switch to it. All development should be done in this branch.
-3. Implement your Hangman game code. The following sections detail what needs to be done.
-4. Record a video showcasing your project while explaining its functionality. You can either submit this video to your mentor or push it to your repository. Your video should be between 1 to 2 minutes long.
+> [!WARNING]
+> You are going to be unable to run the application if you do not import java fx into project properly.
+> Also do not forget about configuring your database.
 
-
-
-
-## Database Features ⛁
-You can implement your database with either SQL or MongoDB. There are no preferences.
-This project will utilize 2 Tables:
-
-1) Implement a Table titled: `UserInfo`
-   When a user wants to start the game,
-   they must add their information. 
-   After signing up their information should be saved in the database.
-   
-    <pre>
-    --Name--|--Username--|--Password--
-            |            |
-                 </pre>
-    ```NOTE``` : Make sure each username is different from others.
-   </pre>
-   
-2) You should create a table titled: `GameInfo`,
-Store the details of **each** played game in this table.
-
-   <pre>
-   --GameID--|--Username--|--Word--|--WrongGuesses--|--Time--|--Win--
-             |            |        |                |        |
-   </pre>
-
-    `GameID`: A unique value identifying the game.
-   
-    `Username`: The username of the player.
-   
-    `Word`: The word that was chosen for that specific game.
-
-    `WrongGuesses`: Count the number of wrong letters guessed during the game.
-
-    `Time`:  The amount of time (in seconds) spent in one game.
-
-    `Win`:  A boolean to store whether or not the game was won.
-
-**Important: Ensure to specify the primary key when creating your Database. You are allowed to add additional columns and tables if necessary.**
-
-## UI + Front Features 🎨
- * You must first design the Login, Signup, and main menu pages.
- * After logging in, the player should be able to access 3 buttons on the main page:
-   1) Start the game.
-   2) View the player's previous game details. Use the data stored in the `GameInfo` table to display a summary of every game played by the current user.
-   3) View the leaderboard. Display every player's name alongside their total number of wins. The leaderboard should be sorted from the highest number of wins to the lowest.
-
-While playing the game, note that:
- - For each wrong letter, you must display the next part of the stick figure.
- - You must measure the amount of time the player has spent on each game and store it in the database.
- - Data (words) should be randomly generated by using [Animals API](https://api-ninjas.com/api/animals). First, you can test your code with a fixed word and then from the list API gives you, generate random words for your game. 
-
-
-## Evaluation 📃
-
-Your submission will be evaluated based on the following criteria:
-
-- Error-free compilation and execution of your code.
-- Clean and visually appealing UI.
-- Correct use and design of the database.
-
-
-**Note: Usage of ChatGPT or any other AI generative model to complete any part of this assignment is strictly prohibited. Violation will result in a score of 0 without warnings.**
-
-## Bonus Objectives ✒️
-- Add different difficulty levels to your game, with longer words or a smaller number of guesses.
-- Display a timer on the screen as the user is playing the game. The timer should stop once the game is finished.
-- Implement a competitive mode with two players playing simultaneously.
-- Enhance your leaderboard by adding filters that allow users to search the data by username, duration, number of wins, and number of incorrect guesses.
-
-## Submission ⌛
-The deadline for submitting your code is **Friday, June 7 (18th of Khordad)**. Good luck!
-
-## Resources 📚
-🔗 [Online Hangman game](https://www.gamestolearnenglish.com/hangman/)
-
-🔗 [Install postgresql](https://www.postgresql.org/download/)
-
-🔗 [Install Mongodb](https://www.mongodb.com/try/download/community
-)
-
-🔗 [Install scenebuilder]( https://gluonhq.com/products/scene-builder
-)
-
-
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/JackVey/Hangman.svg?style=for-the-badge&logo=github&logoColor=violet
+[contributors-url]: https://github.com/JackVey/Hangman/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JackVey/Hangman?style=for-the-badge&logo=github&logoColor=violet&color=orange
+[forks-url]: https://github.com/JackVey/Hangman/forks
+[stars-shield]: https://img.shields.io/github/stars/JackVey/Hangman.svg?style=for-the-badge&logo=github&logoColor=violet
+[stars-url]: https://github.com/JackVey/Hangman/stargazers
+[issues-shield]: https://img.shields.io/github/issues/JackVey/Hangman.svg?style=for-the-badge&logo=github&logoColor=violet&color=yellow
+[issues-url]: https://github.com/JackVey/Hangman/issues
+[license-shield]: https://img.shields.io/github/license/JackVey/Hangman?style=for-the-badge&color=purple
+[license-url]: https://github.com/JackVey/Hangman/blob/develop/LICENSE
+[UML.image]: https://github.com/JackVey/Hangman/assets/161158007/c472bf1d-00e1-4cea-922c-88012ae62ce9
+[Java.badge]: https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white
+[CSS.badge]: https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff
+[Postgres.badge]: https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white
+[Java-url]: https://www.java.com/
+[CSS-url]: https://www.w3.org/Style/CSS/Overview.en.html
+[Postgres-url]: https://postgresql.org/
+[loginPage.image]: https://github.com/JackVey/Hangman/assets/161158007/03f7d139-26d6-4b7b-ae3f-c7846b5c15dd
+[gamePage.image]: https://github.com/JackVey/Hangman/assets/161158007/5dacfc04-dbe7-4acf-81f2-0be71397a60a
+[mainPage.image]: https://github.com/JackVey/Hangman/assets/161158007/742c8225-21d0-43b9-a60c-d548b46f8ecf
